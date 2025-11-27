@@ -1,0 +1,43 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Editar Avaliação</h1>
+    <div>
+        <a href="/avaliacao/lst">Listar</a>
+    </div>
+    <div>
+        <form method="post">
+            <label>Usuario</label>
+                <select name="usuario" value="<%=Avaliacao.usuario%>">
+                    <option value="">Selecione</option>
+                        <%Usuarios.forEach(function(Usuario){%>
+                            <option value="<%=Usuario._id%>"><%=Usuario.nome%></option>
+                        <%})%>
+                </select>
+
+            <label>Nota:</label>
+            <select type="text" name="nota" value="<%=Avaliacao.nota%>">
+                <option value="★☆☆☆☆">★☆☆☆☆</option>
+                <option value="★★☆☆☆">★★☆☆☆</option>
+                <option value="★★★☆☆">★★★☆☆</option>
+                <option value="★★★★☆">★★★★☆</option>
+                <option value="★★★★★">★★★★★</option>
+            </select>
+
+
+            <label>Comentario:</label>
+            <input type="text" name="comentario" value="<%=Avaliacao.comentario%>"><br>
+
+
+            <label>Filme</label>
+                <select name="filme" value="<%=Avaliacao.filme%>">
+                    <option value="">Selecione</option>
+                        <% Filmes.forEach(function(Filme){ %>
+                            <option value="<%=Filme._id%>"><%=Filme.titulo%></option>
+                        <%})%>
+                </select>
+
+            <button type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+
+    <%-include('../rodape.ejs')%>

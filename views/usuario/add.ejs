@@ -1,0 +1,22 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Criar Usuario</h1>
+<div>
+<a href="/usuario/lst">Listar</a>
+</div>
+<div>
+    <form  method="post" >
+        <label>Nome:</label>
+        <input type="text" name="nome"><br>
+
+        <label>Email:</label>
+        <input type="text" name="email"><br>
+
+        <label>Senha:</label>
+        <input type="password" name="senha"><br>
+
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>

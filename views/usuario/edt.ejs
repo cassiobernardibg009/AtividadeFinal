@@ -1,0 +1,31 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Editar Usuario</h1>
+<div>
+<a href="/usuario/lst">Listar</a>
+</div>
+<div>
+    <form  method="post">
+       
+        <input type="hidden" name="id" 
+        value="<%=Usuario.id%>"><br>
+
+        <label>Nome:</label>
+        <input type="text" name="nome" 
+        value="<%=Usuario.nome%>"><br>
+
+        <label>Email:</label>
+        <input type="text" name="email"
+        value="<%=Usuario.email%>"
+        ><br>
+
+        <label>Senha:</label>
+        <input type="text" name="senha"
+        value="<%=Usuario.senha%>"
+        ><br>
+
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>

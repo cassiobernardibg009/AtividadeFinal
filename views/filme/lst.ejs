@@ -1,0 +1,38 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Filme</h1>
+    <div>
+        <form action="
+        " method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="digite o nome">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+    <a href="/filme/add">+filme</a>
+    <table>
+        <tr>
+            <td>Titulo</td>
+            <td>Classificação</td>
+            <td>Ano de lançamento</td>
+            <td>Capa</td>
+            <td>Categoria</td>
+            <td>Video</td>
+
+
+
+        </tr>
+      
+        <%for (const {id, titulo, classificacao, anoLancamento, capa, categoria,video} of Filmes) {%>
+        <tr>
+            <td><%=titulo%></td>
+            <td><%=classificacao%></td>
+            <td><%=anoLancamento%></td>
+            <td><img src="<%=capa%>" alt="<%=titulo%>" width="100" height="100"></td>
+            <td><%=categoria.nome%></td>
+            <td><a href="<%=video%>"><%=video%></a></td>
+            <td><a href="/filme/edt/<%=id%>">Editar</a>
+            <a href="/filme/del/<%=id%>">Excluir</a></td>
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%>

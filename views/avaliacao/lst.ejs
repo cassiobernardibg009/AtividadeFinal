@@ -1,0 +1,32 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Avaliações</h1>
+    <div>
+        <form action="
+        " method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="digite o nome">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+    <a href="/avaliacao/add">+Avaliação</a>
+    <table>
+        <tr>
+            <td>Usuario</td>
+            <td>Filme</td>
+            <td>Nota</td>
+            <td>Comentario</td>
+
+        </tr>
+      
+        <%for (const {id, usuario, filme, nota, comentario} of Avaliacaos) {%>
+        <tr>
+            <td><%=usuario.nome%></td>
+            <td><%=filme.titulo%></td>
+            <td><%=nota%></td>
+            <td><%=comentario%></td>
+            <td><a href="/avaliacao/edt/<%=id%>">Editar</a>
+            <a href="/avaliacao/del/<%=id%>">Excluir</a></td>
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%>
