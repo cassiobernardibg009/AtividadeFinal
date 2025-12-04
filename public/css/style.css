@@ -1,129 +1,249 @@
-/* Estilos Gerais */
+/* public/css/pipoca.css */
+
+/* Fonte divertida e redondinha do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap');
+
+:root {
+  --popcorn-red: #ff4757;       /* Vermelho Pipoca vibrante */
+  --popcorn-white: #ffffff;     /* Branco puro */
+  --popcorn-cream: #fdf6e3;     /* Creme suave para fundo (pipoca amanteigada) */
+  --text-dark: #2f3542;
+  --shadow-pop: 4px 4px 0px rgba(0,0,0,0.1); /* Sombra "dura" estilo cartoon */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .footer{
-    padding: 20px;
-  }
-  
-  .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 100%;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos do Menu de Navegação */
-  .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: line;
-    gap: 10px;
-  }
-  
-  .menu ul li {
-    text-align: center;
-  }
-  
-  /* Estilos do Formulário */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* Estilos dos Botões */
-  .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .btn {
-    background-color: #28a745;
-    color: #fff;
-  }
-  
-  .btn.edit {
-    background-color: #ffc107;
-    color: #000;
-  }
-  
-  .btn.add {
-    color: #fff;
-    background-color:#1c0df3
-  }
-  
-  .btn.delete {
-    background-color: #dc3545;
-    color: #fff;
-  }
-  
-  .btn.cancelar {
-    background-color: #6c757d;
-    color: #fff;
-  }
-  
-  .btn:hover {
-    opacity: 0.9;
-  }
-  
-  /* Estilos da Tabela */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  table th, table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  table th {
-    background-color: #f8f9fa;
-  }
-  
-  table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .search
-  {
-    text-align: right;
-  }
+  font-family: 'Fredoka', sans-serif; /* Fonte caricata */
+  background-color: var(--popcorn-cream);
+  /* Fundo com listras sutis de pipoca */
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--popcorn-cream),
+    var(--popcorn-cream) 20px,
+    #fff0f0 20px,
+    #fff0f0 40px
+  );
+  color: var(--text-dark);
+  padding-bottom: 50px;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* --- Container --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- Cabeçalho Pipoca --- */
+.menu {
+  background-color: var(--popcorn-red);
+  padding: 15px 30px;
+  border-radius: 30px; /* Bem redondo */
+  box-shadow: var(--shadow-pop);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  border: 3px solid white;
+  margin-bottom: 40px;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+/* --- Barra de Pesquisa --- */
+.search-bar {
+  display: flex;
+  flex-grow: 1;
+  max-width: 500px;
+  background: white;
+  border-radius: 25px;
+  padding: 5px 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.search-bar:focus-within {
+  border-color: #ffeaa7;
+  transform: scale(1.02);
+}
+
+.search-bar input {
+  border: none;
+  flex-grow: 1;
+  padding: 8px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  color: var(--popcorn-red);
+}
+
+.search-bar input::placeholder {
+  color: #ffb8b8;
+}
+
+.search-bar button {
+  background: transparent;
+  border: none;
+  color: var(--popcorn-red);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* --- Botões --- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: var(--popcorn-red);
+  border-radius: 25px;
+  font-weight: 600;
+  border: 2px solid var(--popcorn-red);
+  transition: all 0.2s;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.15);
+  background-color: #fff5f5;
+}
+
+/* Botão Admin específico (branco no menu vermelho) */
+.btn-admin {
+  background-color: white;
+  color: var(--popcorn-red);
+  border: none;
+}
+
+.btn-trailer {
+  background-color: var(--popcorn-red);
+  color: white;
+  border: none;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+.btn-trailer:hover {
+  background-color: #ff6b81;
+  color: white;
+}
+
+/* --- Grid e Cards --- */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #eee;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-10px) rotate(1deg); /* Leve rotação divertida */
+  border-color: var(--popcorn-red);
+  box-shadow: 0 10px 20px rgba(255, 71, 87, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-bottom: 3px solid #eee;
+}
+
+.card-body {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  color: var(--popcorn-red);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.meta-info {
+  font-size: 0.9rem;
+  color: #747d8c;
+  margin-bottom: 15px;
+}
+
+.meta-info i {
+  color: #ffa502; /* Amarelo pipoca */
+  width: 20px;
+  text-align: center;
+}
+
+/* --- Avaliações --- */
+.avaliacoes-container {
+  background-color: #fff0f0; /* Fundo rosado bem claro */
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: auto;
+}
+
+.avaliacoes-container h3 {
+  font-size: 1rem;
+  color: var(--popcorn-red);
+  margin-bottom: 10px;
+}
+
+.avaliacoes-lista {
+  max-height: 120px;
+  overflow-y: auto;
+  /* Scrollbar personalizada */
+  scrollbar-width: thin;
+  scrollbar-color: var(--popcorn-red) #fff0f0;
+}
+
+.avaliacao-item {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  border-left: 4px solid var(--popcorn-red);
+}
+
+.nota-badge {
+  background-color: #ffa502;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+/* --- Rodapé --- */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: var(--popcorn-red);
+  font-weight: 600;
+}

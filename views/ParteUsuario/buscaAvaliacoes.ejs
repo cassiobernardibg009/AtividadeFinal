@@ -1,0 +1,41 @@
+<%- include('../cabecalhoPublico') %>
+
+<div class="container">
+    <h1>Pesquisar Avaliações</h1>
+    <p>Filtre avaliações por palavras-chave nos comentários.</p>
+
+    <form action="/publico/avaliacoes" method="GET" style="margin-bottom: 20px;">
+        <input type="text" name="termo" placeholder="Digite um termo (ex: 'excelente', 'ruim')..." value="<%= termo || '' %>" style="padding: 10px; width: 300px;">
+        <button type="submit" class="btn"><i class="fa fa-search"></i> Buscar</button>
+        <a href="/publico/avaliacoes" class="btn" style="background-color: #666;">Limpar</a>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Filme</th>
+                <th>Usuário</th>
+                <th>Nota</th>
+                <th>Comentário</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(avaliacoes.length > 0) { %>
+                <% for (let aval of avaliacoes) { %>
+                    <tr>
+                        <td><%= aval.filme ? aval.filme.titulo : 'Filme removido' %></td>
+                        <td><%= aval.usuario ? aval.usuario.nome : 'Anônimo' %></td>
+                        <td><%= aval.nota %></td>
+                        <td><%= aval.comentario %></td>
+                    </tr>
+                <% } %>
+            <% } else { %>
+                <tr>
+                    <td colspan="4" style="text-align: center;">Nenhuma avaliação encontrada para o termo pesquisado.</td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../rodape') %>

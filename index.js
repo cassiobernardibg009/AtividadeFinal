@@ -6,6 +6,8 @@ import UsuarioRoutes from './routes/UsuarioRoutes.js';
 import AvaliaçãoRoutes from './routes/AvaliacaoRoutes.js';
 import CategoriaRoutes from './routes/CategoriaRoutes.js';
 import FilmesRoutes from './routes/FilmeRoutes.js';
+import PublicoRoutes from './routes/PublicoRoutes.js';
+
 
 
 const app = express();
@@ -27,6 +29,7 @@ app.use(UsuarioRoutes)
 app.use(AvaliaçãoRoutes)
 app.use(CategoriaRoutes)
 app.use(FilmesRoutes)
+app.use(PublicoRoutes);
 app.use(routes)
 app.listen(3001)
 // Exporta o handler compatível com Vercel
